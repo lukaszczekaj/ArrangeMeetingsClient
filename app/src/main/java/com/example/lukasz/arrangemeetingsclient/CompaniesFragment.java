@@ -18,6 +18,9 @@ public class CompaniesFragment extends Fragment {
         // Required empty public constructor
     }
 
+    public static CompaniesFragment getInstance() {
+        return new CompaniesFragment();
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,

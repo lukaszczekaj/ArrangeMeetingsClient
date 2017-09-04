@@ -10,6 +10,6 @@ import retrofit2.http.GET;
  */
 
 public interface ApiInterface {
-    @GET("company-list")
+    @GET("/company-list")
     Call<JsonArray> getCompanyList();
 }
