@@ -3,6 +3,7 @@ package com.example.lukasz.arrangemeetingsclient;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.example.lukasz.arrangemeetingsclient.api.Company;
 import com.google.gson.Gson;
@@ -40,11 +41,13 @@ public class MainActivity extends AppCompatActivity {
                 Type listType = new TypeToken<List<Company>>() {}.getType();
                 List<Company> companyList = new Gson().fromJson(jsonString, listType);
                 Log.i("onResponse", companyList.toString());
+                Toast.makeText(MainActivity.this, "Pobrano dane z API", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onFailure(Call<JsonArray> call, Throwable t) {
                 Log.e("onFailure", t.toString());
+                Toast.makeText(MainActivity.this, t.toString(), Toast.LENGTH_SHORT).show();
             }
         });
     }
