@@ -22,11 +22,9 @@ public class ArrangeMeetings extends Application {
     public void onCreate() {
         super.onCreate();
         sharedPreferences = getSharedPreferences("com.example.lukasz.arrangemeetingsclient", MODE_PRIVATE);
-        String baseUrl = BASE_URL;
-        if (sharedPreferences.getString("setting.apiUrl", "") != "") {
-            baseUrl = sharedPreferences.getString("setting.apiUrl", BASE_URL).toString();
-        }
+        String baseUrl = sharedPreferences.getString("setting.apiUrl", BASE_URL).toString();
         retrofit = new Retrofit.Builder().baseUrl(baseUrl).addConverterFactory(GsonConverterFactory.create()).build();
         apiInterface = retrofit.create(ApiInterface.class);
     }
+
 }

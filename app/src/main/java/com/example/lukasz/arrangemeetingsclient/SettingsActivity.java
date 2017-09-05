@@ -26,7 +26,7 @@ public class SettingsActivity extends AppCompatActivity {
 
     @OnClick(R.id.buttonSaveSettings)
     public void onClickButtonSaveSettings() {
-        sharedPreferences.edit().putString("setting.apiUrl", editTextApiUrl.getText().toString()).apply();
+        sharedPreferences.edit().putString("setting.apiUrl", editTextApiUrl.getText().toString()).commit();
         Toast.makeText(this, "Zapisano", Toast.LENGTH_SHORT).show();
         finish();
     }
