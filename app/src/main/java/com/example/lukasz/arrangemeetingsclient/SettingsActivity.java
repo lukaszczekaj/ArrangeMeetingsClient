@@ -1,5 +1,6 @@
 package com.example.lukasz.arrangemeetingsclient;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -29,6 +30,7 @@ public class SettingsActivity extends AppCompatActivity {
     public void onClickButtonSaveSettings() {
         sharedPreferences.edit().putString("setting.apiUrl", editTextApiUrl.getText().toString()).commit();
         Toast.makeText(this, "Zapisano", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(this, MainActivity.class));
         finish();
     }
 
