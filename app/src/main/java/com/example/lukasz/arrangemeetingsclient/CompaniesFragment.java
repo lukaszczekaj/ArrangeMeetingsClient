@@ -37,7 +37,7 @@ public class CompaniesFragment extends Fragment {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(linearLayoutManager);
         recyclerView.setAdapter(adapterCompanies);
-        recyclerView.setHasFixedSize(true);
+     //   recyclerView.setHasFixedSize(true);
         return view;
     }
 

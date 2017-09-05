@@ -12,7 +12,8 @@ import butterknife.OnClick;
 
 public class SettingsActivity extends AppCompatActivity {
 
-    @BindView(R.id.editTextApiUrl) EditText editTextApiUrl;
+    @BindView(R.id.editTextApiUrl)
+    EditText editTextApiUrl;
 
     SharedPreferences sharedPreferences;
 
@@ -37,5 +38,8 @@ public class SettingsActivity extends AppCompatActivity {
         if (sharedPreferences.getString("setting.apiUrl", "") != "") {
             editTextApiUrl.setText(sharedPreferences.getString("setting.apiUrl", null).toString());
         }
+
     }
+
+
 }

@@ -7,22 +7,15 @@
     tools:context="com.example.lukasz.arrangemeetingsclient.MainActivity">
 
 
+
+
     <FrameLayout
         android:id="@+id/container"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         ></FrameLayout>
 
-    <Button
-        android:id="@+id/refresh"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Refresh"/>
 
-    <Button
-        android:id="@+id/buttonSettings"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Ustawienia"/>
+
 
 </LinearLayout>

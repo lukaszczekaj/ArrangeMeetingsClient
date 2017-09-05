@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import com.example.lukasz.arrangemeetingsclient.api.Company;
@@ -18,13 +19,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 
 public class MainActivity extends AppCompatActivity {
+
+
 
 
     SharedPreferences sharedPreferences;
@@ -41,8 +43,8 @@ public class MainActivity extends AppCompatActivity {
             fragmentTransaction.commit();
         }
         sharedPreferences = getSharedPreferences("com.example.lukasz.arrangemeetingsclient", MODE_PRIVATE);
-        Intent intent = new Intent(this, SettingsActivity.class);
-     //   startActivity(intent);
+
+     //   startActivity(new Intent(this, SettingsActivity.class));
 
     }
 
@@ -51,9 +53,10 @@ public class MainActivity extends AppCompatActivity {
         super.onResume();
         refresh();
 
+
     }
 
-    @OnClick(R.id.refresh)
+
     public void refresh() {
         ArrangeMeetings.apiInterface.getCompanyList().enqueue(new Callback<JsonArray>() {
             @Override
@@ -79,10 +82,18 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    @OnClick(R.id.buttonSettings)
+
     public void onClickButtonSettings() {
-        Intent intent = new Intent(this, SettingsActivity.class);
-        startActivity(intent);
+        startActivity(new Intent(this, SettingsActivity.class));
     }
+
+
+    public void onClickCompanyItem(View view) {
+        Toast.makeText(this, "Klik na company item", Toast.LENGTH_SHORT).show();
+
+
+    }
+
+
 
 }
