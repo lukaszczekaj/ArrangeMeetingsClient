@@ -29,8 +29,6 @@ import retrofit2.Response;
 public class MainActivity extends AppCompatActivity {
 
 
-
-
     SharedPreferences sharedPreferences;
     public List<Company> allCompanyList = new ArrayList<>();
 
@@ -47,15 +45,12 @@ public class MainActivity extends AppCompatActivity {
         sharedPreferences = getSharedPreferences("com.example.lukasz.arrangemeetingsclient", MODE_PRIVATE);
 
 
-
+        refresh();
     }
 
     @Override
     protected void onResume() {
         super.onResume();
-        refresh();
-
-
     }
 
 
@@ -65,7 +60,8 @@ public class MainActivity extends AppCompatActivity {
             public void onResponse(Call<JsonArray> call, Response<JsonArray> response) {
                 String jsonString = response.body().toString();
 
-                Type listType = new TypeToken<List<Company>>() {}.getType();
+                Type listType = new TypeToken<List<Company>>() {
+                }.getType();
                 List<Company> companyList = new Gson().fromJson(jsonString, listType);
 
                 allCompanyList = companyList;
@@ -82,11 +78,6 @@ public class MainActivity extends AppCompatActivity {
                 Toast.makeText(MainActivity.this, t.toString(), Toast.LENGTH_SHORT).show();
             }
         });
-    }
-
-
-    public void onClickButtonSettings() {
-        startActivity(new Intent(this, SettingsActivity.class));
     }
 
 

@@ -1,5 +1,7 @@
 package com.example.lukasz.arrangemeetingsclient;
 
+import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
@@ -9,8 +11,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.lukasz.arrangemeetingsclient.api.Company;
+
+import org.parceler.Parcels;
 
 import java.io.InputStream;
 import java.net.URL;
@@ -23,7 +28,7 @@ import java.util.List;
 
 public class AdapterCompanies extends RecyclerView.Adapter<AdapterCompanies.ViewHolder> {
 
-    List<Company> companyList = new ArrayList<>();
+    static List<Company> companyList = new ArrayList<>();
 
     public AdapterCompanies(List<Company> companyList) {
         this.companyList = companyList;
@@ -59,13 +64,29 @@ public class AdapterCompanies extends RecyclerView.Adapter<AdapterCompanies.View
         public TextView textViewContent;
         public TextView textViewInformation;
         public ImageView imageView;
+        private final Context context;
 
         public ViewHolder(View itemView) {
             super(itemView);
+            context = itemView.getContext();
             textViewContent = itemView.findViewById(R.id.content);
             textViewInformation = itemView.findViewById(R.id.information);
             imageView = itemView.findViewById(R.id.photo);
+
+            itemView.setOnClickListener(new View.OnClickListener(){
+                @Override
+                public void onClick(View v) {
+                    int pos = getAdapterPosition();
+                    if(pos != RecyclerView.NO_POSITION){
+                        Company clickedDataItem = companyList.get(pos);
+                        Toast.makeText(v.getContext(), "You clicked " + clickedDataItem.name, Toast.LENGTH_SHORT).show();
+                        context.startActivity(new Intent(context, CompanyActivity.class).putExtra("company", Parcels.wrap(clickedDataItem)));
+                    }
+                }
+            });
+
         }
+
     }
 
     private class DownLoadImageTask extends AsyncTask<String,Void,Bitmap> {

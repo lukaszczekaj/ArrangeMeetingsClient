@@ -7,6 +7,9 @@ package com.example.lukasz.arrangemeetingsclient.api;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import org.parceler.Parcel;
+
+@Parcel
 public class Company {
 
     @SerializedName("name")
