@@ -22,7 +22,8 @@
         <activity
             android:name=".SettingsActivity"
             android:label="Ustawienia" />
-        <activity android:name=".CompanyActivity"></activity>
+        <activity android:name=".CompanyActivity" />
+        <activity android:name=".SendMeetingActivity"></activity>
     </application>
 
 </manifest>

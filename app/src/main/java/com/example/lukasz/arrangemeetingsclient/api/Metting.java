@@ -1,0 +1,76 @@
+package com.example.lukasz.arrangemeetingsclient.api;
+
+import org.parceler.Parcel;
+
+/**
+ * Created by lukasz on 06.09.17.
+ */
+
+@Parcel
+public class Metting {
+
+    private String mail;
+    private Integer companyID;
+    private String phone;
+    private String firstName;
+    private String lastName;
+    private String dateFrom;
+    private String dateTo;
+
+
+    public Integer getCompanyID() {
+        return companyID;
+    }
+
+    public void setCompanyID(Integer companyID) {
+        this.companyID = companyID;
+    }
+
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public String getDateFrom() {
+        return dateFrom;
+    }
+
+    public void setDateFrom(String dateFrom) {
+        this.dateFrom = dateFrom;
+    }
+
+    public String getDateTo() {
+        return dateTo;
+    }
+
+    public void setDateTo(String dateTo) {
+        this.dateTo = dateTo;
+    }
+
+    public String getMail() {
+        return mail;
+    }
+
+    public void setMail(String mail) {
+        this.mail = mail;
+    }
+}
