@@ -16,7 +16,69 @@ public class Metting {
     private String lastName;
     private String dateFrom;
     private String dateTo;
+    private Integer year;
+    private Integer month;
+    private Integer day;
+    private Integer timeFromHour;
+    private Integer timeFromMinute;
+    private Integer timeToHour;
+    private Integer timeToMinute;
 
+    public Integer getYear() {
+        return year;
+    }
+
+    public void setYear(Integer year) {
+        this.year = year;
+    }
+
+    public Integer getMonth() {
+        return month;
+    }
+
+    public void setMonth(Integer month) {
+        this.month = month;
+    }
+
+    public Integer getDay() {
+        return day;
+    }
+
+    public void setDay(Integer day) {
+        this.day = day;
+    }
+
+    public Integer getTimeFromHour() {
+        return timeFromHour;
+    }
+
+    public void setTimeFromHour(Integer timeFromHour) {
+        this.timeFromHour = timeFromHour;
+    }
+
+    public Integer getTimeFromMinute() {
+        return timeFromMinute;
+    }
+
+    public void setTimeFromMinute(Integer timeFromMinute) {
+        this.timeFromMinute = timeFromMinute;
+    }
+
+    public Integer getTimeToHour() {
+        return timeToHour;
+    }
+
+    public void setTimeToHour(Integer timeToHour) {
+        this.timeToHour = timeToHour;
+    }
+
+    public Integer getTimeToMinute() {
+        return timeToMinute;
+    }
+
+    public void setTimeToMinute(Integer timeToMinute) {
+        this.timeToMinute = timeToMinute;
+    }
 
     public Integer getCompanyID() {
         return companyID;

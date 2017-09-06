@@ -6,7 +6,6 @@ import com.google.gson.JsonArray;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
-import retrofit2.http.Headers;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
 
@@ -19,10 +18,6 @@ public interface ApiInterface {
     @GET("/company-list")
     Call<JsonArray> getCompanyList();
 
-    @Headers({
-            "Accept: application/vnd.github.v3.full+json",
-            "User-Agent: Retrofit-Sample-App"
-    })
     @GET("/receiving-customers-date/{id}")
     Call<JsonArray> getReceivingCustomersDate(@Path("id") String id);
 

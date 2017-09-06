@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.lukasz.arrangemeetingsclient.api.Company;
 
@@ -79,7 +78,7 @@ public class AdapterCompanies extends RecyclerView.Adapter<AdapterCompanies.View
                     int pos = getAdapterPosition();
                     if(pos != RecyclerView.NO_POSITION){
                         Company clickedDataItem = companyList.get(pos);
-                        Toast.makeText(v.getContext(), "You clicked " + clickedDataItem.name, Toast.LENGTH_SHORT).show();
+                        //Toast.makeText(v.getContext(), "You clicked " + clickedDataItem.name, Toast.LENGTH_SHORT).show();
                         context.startActivity(new Intent(context, CompanyActivity.class).putExtra("company", Parcels.wrap(clickedDataItem)));
                     }
                 }
